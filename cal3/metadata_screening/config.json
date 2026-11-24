@@ -1,0 +1,78 @@
+{
+  "version": "V35_METADATA_ONLY_RIDGE_SCREEN_V3_METADATA_BINDING",
+  "status": "PRE_FIT_CODE_AND_CONFIG",
+  "source_labels": "inputs/labels.csv",
+  "source_registry": "inputs/frozen_candidate_registry.json",
+  "workload_feature_whitelist": [
+    "n",
+    "d",
+    "nlist",
+    "metric",
+    "normalization"
+  ],
+  "candidate_feature_whitelist": [
+    "candidate_id",
+    "raw_algorithm",
+    "device",
+    "compute_dtype",
+    "approximate",
+    "options_match.sampling_fraction",
+    "options_match.threads"
+  ],
+  "forbidden_prediction_inputs": [
+    "qps",
+    "qps_at_r95",
+    "runtime",
+    "memory",
+    "centroids",
+    "profiles",
+    "evaluation_queries",
+    "minimum_nprobe_at_r95",
+    "family_id",
+    "workload_id"
+  ],
+  "features": "log(n,d,nlist), normalization, metric onehot; registry candidate/algorithm/device/dtype/approximate onehot and static sampling/threads with missing indicators; numeric-workload x candidate-descriptor interactions",
+  "target": "log(qps_at_r95 / observed_positive_task_oracle)",
+  "numeric_label_rule": "finite positive qps_at_r95 AND terminal_status==OK AND utility_supervised=true",
+  "negative_handling": "keep terminal coverage; no zero QPS/log target; all registry candidates remain prediction candidates absent external static exclusion",
+  "model_family": "Ridge",
+  "alpha_grid": [
+    1.0,
+    10.0,
+    100.0
+  ],
+  "inner_objective": "family_macro_squared_log_retained_utility_error",
+  "inner_tie": "larger_alpha",
+  "outer_split": "leave_one_family_out_over_numeric_development_tasks",
+  "fit_weight": "family_equal_then_task_equal_then_positive_candidate_equal",
+  "scaler": "weighted training-part-only mean and population std, zero std becomes1",
+  "ridge_objective": "sum(normalized_sample_weight*(y-yhat)^2)+alpha*L2(coef)^2; unpenalized weighted intercept",
+  "M_grid": [
+    3,
+    5,
+    7,
+    10
+  ],
+  "M_selection": "smallest family_macro full-registry oracle-inclusion LOWER BOUND >=0.90, else10; observed-subset inclusion is diagnostic only",
+  "M_includes_baseline": true,
+  "strong_fixed_ranking": "descending positive-label task coverage, then family-macro arithmetic mean of observed retained utility among covered tasks, then registry order; full-coverage candidates therefore precede incomplete ones",
+  "screen_tie": "baseline-first then registry order; exact floating equality, no tolerance search",
+  "oracle_tie": "any positive candidate with exactly maximum recorded qps counts as oracle inclusion",
+  "expected_numeric_workloads": 10,
+  "expected_numeric_families": 5,
+  "prospective_actions_allowed": false,
+  "physical_experiments_allowed": false,
+  "supervision_excluded_candidates": {
+    "gpu:faiss_kmeans:fp32": "HISTORICAL_BACKEND_IDENTITY_UNVERIFIED_GPU0_RUNNER"
+  },
+  "known_nonutility_terminal_statuses": [
+    "R95_NOT_REACHED_ON_FROZEN_GRID",
+    "INVALID_ALGORITHM_OUTPUT_NONFINITE_CENTROIDS",
+    "DETERMINISTICALLY_INFEASIBLE_ANGULAR_ZERO_NORM"
+  ],
+  "oracle_definition": "maximum Recall-qualified utility in genuine registered portfolio; historical GPU backend unverified => oracle identity partially identified",
+  "oracle_inclusion_bounds": "lower=observed valid winner included AND every unknown candidate included; upper=observed valid winner included OR at least one unknown included",
+  "gpu_faiss_prediction": "retained in15 registry; receives shared metadata coefficients but has no direct trusted genuine-GPU supervision",
+  "source_workload_matrix": "inputs/V2_WORKLOAD_MATRIX.csv",
+  "metadata_binding": "workload_id join to existing frozen V2_WORKLOAD_MATRIX; fill blank static metadata fields only; reject nonblank conflicts; never impute outcomes"
+}

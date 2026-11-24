@@ -1,0 +1,155 @@
+{
+  "candidates": [
+    {
+      "approximate": false,
+      "candidate_id": "gpu:flash_kmeans:fp32",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "raw_algorithm": "flash_kmeans"
+    },
+    {
+      "approximate": true,
+      "candidate_id": "gpu:flash_kmeans:fp16",
+      "compute_dtype": "fp16",
+      "device": "cuda",
+      "raw_algorithm": "flash_kmeans"
+    },
+    {
+      "approximate": true,
+      "candidate_id": "gpu:superkmeans:sampling_0.3",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "options_match": {
+        "sampling_fraction": 0.3
+      },
+      "raw_algorithm": "superkmeans_gpu"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "gpu:faiss_kmeans:fp32",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "raw_algorithm": "faiss_gpu"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "gpu:cuml_kmeans:fp32",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "raw_algorithm": "cuml_kmeans"
+    },
+    {
+      "admission": "adapter_required",
+      "approximate": true,
+      "approximation_basis": [
+        "flat_mode_default_sampling_fraction_0.3",
+        "automatic_hierarchical_mode_for_n_gt_100000",
+        "hierarchical_default_iters_mesoclustering_3_fineclustering_5_refinement_0"
+      ],
+      "candidate_id": "cpu:superkmeans:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "implementation_mode": "python_auto_flat_sampling0.3_at_n_le_100000_else_hierarchical_3_5_0",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "superkmeans_cpu"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "cpu:faiss_kmeans:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "faiss_cpu"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "cpu:sklearn_lloyd:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "sklearn_lloyd"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "cpu:sklearn_elkan:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "sklearn_elkan"
+    },
+    {
+      "approximate": true,
+      "candidate_id": "cpu:sklearn_minibatch:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "sklearn_minibatch"
+    },
+    {
+      "admission": "adapter_required",
+      "approximate": false,
+      "candidate_id": "cpu:mopbucket:fp32:t4",
+      "compute_dtype": "fp32",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "mopbucket"
+    },
+    {
+      "approximate": false,
+      "candidate_id": "gpu:fastkmeans_triton:fp32",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "full_data_enforced": true,
+      "raw_algorithm": "fastkmeans_triton",
+      "shared_initialization_supported": false
+    },
+    {
+      "approximate": false,
+      "candidate_id": "gpu:kmcuda_yinyang:fp32",
+      "comparison_note": "upstream KMCUDA stops on reassignment ratio and exposes no max_iter",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "options_match": {
+        "reassignment_tolerance": 0.0001,
+        "yinyang_t": 0.1
+      },
+      "raw_algorithm": "kmcuda_yinyang",
+      "shared_initialization_supported": true,
+      "strict_fixed_iteration_comparable": false
+    },
+    {
+      "approximate": false,
+      "candidate_id": "cpu:mlpack_hamerly:fp64:t4",
+      "compute_dtype": "fp64",
+      "device": "cpu",
+      "options_match": {
+        "threads": 4
+      },
+      "raw_algorithm": "mlpack_hamerly",
+      "shared_initialization_supported": true
+    },
+    {
+      "approximate": true,
+      "candidate_id": "gpu:superkmeans:sampling_1.0",
+      "comparison_note": "full input sampling; hierarchical SuperKMeans semantics remain operational",
+      "compute_dtype": "fp32",
+      "device": "cuda",
+      "options_match": {
+        "sampling_fraction": 1.0
+      },
+      "raw_algorithm": "superkmeans_gpu"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "scope": "Training evaluation, Cal3, FAISS retrieval, and SeekDB integration notes",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 326,
+      "sha256": "a0d4940dc19c77705b28712bba8eb5fb04897d162d6caa3be71f9d869c51099b",
+      "git_blob": "7acadc85b91304976ed3f945a486857688634529"
+    },
+    {
+      "path": "benchmarks/assets/contracts.py",
+      "bytes": 8311,
+      "sha256": "2ec93c1d86f5174b7d9e5b485818bc07ad5836aa8c8c27198d2f27fea3fae32b",
+      "git_blob": "3e74e48345c3bcf52f7ce724b49bdb23c480d1cd"
+    },
+    {
+      "path": "benchmarks/assets/materialize_exact_gt.py",
+      "bytes": 11430,
+      "sha256": "e316577d7bc47e88c1ab586b0a270e2666cfa23be896e945ee6f1e0b74379283",
+      "git_blob": "885bc6a28bff9a1af425ae91bf0b016a3b62b739"
+    },
+    {
+      "path": "benchmarks/assets/prepare_assets_v2.py",
+      "bytes": 13099,
+      "sha256": "73d048fa30456e0ce558cc270af3b8111eed6e1c0745c2b68f71b5631d65177b",
+      "git_blob": "75cb7613d6815c63fcde0f15af6a397017bcc86f"
+    },
+    {
+      "path": "benchmarks/backend/data_registry.json",
+      "bytes": 6521,
+      "sha256": "8670a7795129e698cabcf020cc93dd2e88005347d7f9e29d425ced92f2474274",
+      "git_blob": "eeca6cdc1f58eeef3117a5d074da01e3ec8ac1eb"
+    },
+    {
+      "path": "benchmarks/backend/preflight.py",
+      "bytes": 6922,
+      "sha256": "136b7e88ae667b7476cfd2136e6f9a4abb3b3fec8f0c43acb3585483b6d56c3e",
+      "git_blob": "e24a05ecaed3792febec91a52560059e791f3628"
+    },
+    {
+      "path": "benchmarks/backend/prepare_superkmeans_input.py",
+      "bytes": 7007,
+      "sha256": "4214c9e9e6a18fd44b39e128ec4ee00ed3d62851c1bc3213989b043af8c685c7",
+      "git_blob": "e696291b840a9b7d25bed9f53dd133b8ccb7f31d"
+    },
+    {
+      "path": "benchmarks/backend/quality_eval_v2.py",
+      "bytes": 57061,
+      "sha256": "38cb1b03dc5c26273f6165791be26b5458478536ccd8bfc1b730182f9e1cda56",
+      "git_blob": "a747928f7608255426c5782daa588c03d97fed71"
+    },
+    {
+      "path": "benchmarks/backend/record_io.py",
+      "bytes": 1431,
+      "sha256": "efa2df56d6c87bd4063caa0702534799f8923ca290dbfcf6e67de5e6bcecd11c",
+      "git_blob": "0c8fc69a2aebf4f27792773b36e45cc9d49b0a66"
+    },
+    {
+      "path": "benchmarks/backend/registry_utils.py",
+      "bytes": 7106,
+      "sha256": "0b00fc1c065aae1aa38887aecbdf0720ba27eda08a92d12e0c0c2126a92bf7dd",
+      "git_blob": "9ad676acca77f36654fadbf5262d1878ea3842ee"
+    },
+    {
+      "path": "benchmarks/backend/result_contract.py",
+      "bytes": 17126,
+      "sha256": "6df78dd4ce357fc8ee8c3284a846924ba103d7561e49c4dee5f34d65266d803a",
+      "git_blob": "3d12b303985a44b9fb8222c1262cb35461318399"
+    },
+    {
+      "path": "benchmarks/backend/run_cpu_experiments.py",
+      "bytes": 31064,
+      "sha256": "6ff436b4a627ad35dbbd3c2e8881ff5fbe3c4ea80e45024a81b399e3aadd2de9",
+      "git_blob": "4c58a9f3e841900134afc5b847015fc19a02ea35"
+    },
+    {
+      "path": "benchmarks/backend/run_experiments.py",
+      "bytes": 74181,
+      "sha256": "3ccc6b15e97aae6afbffff2047786629c2fd1509a8a5a92208e274f8d839bcd4",
+      "git_blob": "0a9bea58d9f2a9e79113d67f5b82a3176369410a"
+    },
+    {
+      "path": "benchmarks/backend/super_sampling_contract.py",
+      "bytes": 875,
+      "sha256": "a2eb478c81a1c8eec66f1e5ec7827838de3ce9cf0590b5c05867598ff7516e10",
+      "git_blob": "c3f9a877ea810db13bab54123158e479da23f4c2"
+    },
+    {
+      "path": "benchmarks/backend/synthetic_controls.py",
+      "bytes": 5697,
+      "sha256": "b265e0692879e77bd39b08720ce7a611c93870341970e088819447bc39f0fb84",
+      "git_blob": "30e8c069fb11c2888d9d77564c53b5ee6106909b"
+    },
+    {
+      "path": "benchmarks/backend/unified_contract.py",
+      "bytes": 6613,
+      "sha256": "579c11eb1f2c51c8633aca769736363aa36e10f77628b21bbffc03ed9d1d450a",
+      "git_blob": "36e28614dd249dee7aa4625e34dee7139d6c9531"
+    },
+    {
+      "path": "benchmarks/configs/cpu_example.json",
+      "bytes": 884,
+      "sha256": "3a460f3d7563fb7d09d036275ab1bcc62004937aa3228a318b81b1df60e4644c",
+      "git_blob": "fb3ebefeff1813b1c05023adec5ed860723277ec"
+    },
+    {
+      "path": "benchmarks/configs/gpu_example.json",
+      "bytes": 860,
+      "sha256": "6658d1704731145b6b796f1c4afb58c22862565bf404bd92980590836c7d2ea4",
+      "git_blob": "fc48f212430b88cddbd7ae4d161799a0d8c94e02"
+    },
+    {
+      "path": "benchmarks/configs/make_training_config.py",
+      "bytes": 2849,
+      "sha256": "18c1eb5ad4a3d347eddb0c7f5be21ea5607f9ee0d9cf88ec3b153fdaede30676",
+      "git_blob": "6eb45f11a0f11ef1c4d2d5bc51cfc1dbccd9bde7"
+    },
+    {
+      "path": "benchmarks/configs/workloads_118.json",
+      "bytes": 36122,
+      "sha256": "e433df70b34101a0107b7b67511ff0e9d6578833c022ba9512d7dcf65e7f99e0",
+      "git_blob": "4f266361e44f1d65c391629debd7f65a3b99ed80"
+    },
+    {
+      "path": "benchmarks/training/artifact_io_v1.py",
+      "bytes": 645,
+      "sha256": "e41774a61e56bb9336d6720f6ea50fad32adc392b7d38f003f8323d7536b4153",
+      "git_blob": "862fa733a15064fd02aba2716d7a3d693f734df0"
+    },
+    {
+      "path": "benchmarks/training/library_environment_policy_v1.py",
+      "bytes": 1043,
+      "sha256": "f5532e0bfc8686e3ea8055ebb4eda0e574141e138f8a71de86518b4faf15fb72",
+      "git_blob": "be9452fb22a91021772406a643a205a6c3cb330a"
+    },
+    {
+      "path": "benchmarks/training/profile_source_v1.py",
+      "bytes": 2766,
+      "sha256": "c94cd06e9cf2237b212aa639be6432b4589a83c9da11a98de99af2dfeef2ab74",
+      "git_blob": "f7787699074d62dbea19235c7b50e89d2263ddbd"
+    },
+    {
+      "path": "benchmarks/training/quality_profiles_v2.py",
+      "bytes": 15849,
+      "sha256": "65e67950ecc845bbef0b0f58ffe2b60bcf94d632f6eb7baf178adadef11a6246",
+      "git_blob": "87d4a6f947de69ce18a48646a923cf05d04e440d"
+    },
+    {
+      "path": "benchmarks/training/test_train_prepared_candidate.py",
+      "bytes": 6285,
+      "sha256": "bae21c1a2c9ec99fc6bc4876756b29b3f4b2ec4901d66b72d9c2fd0f3ec25387",
+      "git_blob": "855a0eca1ce4f73137fc88cdc89d18fd331cb7de"
+    },
+    {
+      "path": "benchmarks/training/train_prepared_candidate.py",
+      "bytes": 21827,
+      "sha256": "cc54e1990a18a60e27692259916a68cf90fb60ae899112f881b8e1d37f475b74",
+      "git_blob": "4897259dace9fad98b8e9de75e911dc97130367f"
+    },
+    {
+      "path": "cal3/metadata_screening/config.json",
+      "bytes": 3672,
+      "sha256": "f0d42e5a2bc0dbda6963a8f8b12c58c31deccd4916ff25393e68f161425af6a1",
+      "git_blob": "19e5c4e7a663033d30517834ee85bcdc77f921cb"
+    },
+    {
+      "path": "cal3/metadata_screening/inputs/frozen_candidate_registry.json",
+      "bytes": 4242,
+      "sha256": "7ba5bbd6f10004d6a0e73475bac9e6339e6424d9611afc0cea1fa95cd190e0a3",
+      "git_blob": "e4b0fc2e59e6e91e33e0f11e234e7759337813b8"
+    },
+    {
+      "path": "cal3/metadata_screening/screen.py",
+      "bytes": 17020,
+      "sha256": "475c80af3c4e73671e80fcbe00258e9549537ece7ffcc987b5e75987f62e24b2",
+      "git_blob": "13633cd3de98b0e6207cf7362b69cefa44a82e7b"
+    },
+    {
+      "path": "cal3/metadata_screening/test_screen.py",
+      "bytes": 6110,
+      "sha256": "8740e47aa01a7829f99b27725045a53699d9ccf12590f68c5deaf26ee6423791",
+      "git_blob": "ccce5ae0b3c1b87ca26cb9e4cc2b1530250f214b"
+    },
+    {
+      "path": "cal3/profile.py",
+      "bytes": 9533,
+      "sha256": "4375bdd16927e59469dc3a25e2cc3580f88b71ff981abcc5562f4bad3078f894",
+      "git_blob": "23dae930de1344b25832f9525f76232faa28af27"
+    },
+    {
+      "path": "cal3/selection.py",
+      "bytes": 17146,
+      "sha256": "5abe5e961dc9713e73bd25735177583c636803d80d4fc2ff6298fa25ffc1a30f",
+      "git_blob": "1d309c585376d7169e9084caeebdb55a6fc139ac"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 1011,
+      "sha256": "2d24d0465b9b501e0443958361910a56836df38688abd198cc46970530750a64",
+      "git_blob": "2a5342eec582a5363862b2b07083f109ca1b2c1d"
+    },
+    {
+      "path": "docs/environment.md",
+      "bytes": 2527,
+      "sha256": "0ffb575cddf0d4bd32dcac1a5cdae0123850ef21746f1738135a6cf476c6d069",
+      "git_blob": "a42db4bd063be9106c488ac0ba2c21655157378d"
+    },
+    {
+      "path": "docs/hardware.md",
+      "bytes": 1080,
+      "sha256": "ae41c71db792a4d99595d6011e3391d8b99db5d09323365da5363782fd039635",
+      "git_blob": "fd02a1e62dcf900e0f346fead3f58e98678d4fd8"
+    },
+    {
+      "path": "docs/paper-map.md",
+      "bytes": 3735,
+      "sha256": "b0dec6435269000f24ef6a5c8801969fb74130a196eb11d56f5d4427c5d9c63d",
+      "git_blob": "89022419df0b39526fb857cfe61d5c0bbfae6b57"
+    },
+    {
+      "path": "docs/reproduction.md",
+      "bytes": 7788,
+      "sha256": "8ec0872a8b12297ced5d45c077e2828f873e5ca782ebafe97b69b2a3caedff35",
+      "git_blob": "78adb7b71cf62889cda8127afdb859fb87930529"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 126,
+      "sha256": "8b7e4edb12d6202cd01ce7b7906eab336fc8e4698830352291075501c482ea55",
+      "git_blob": "b6758a5c85203afa723d2402e7bb67d46366dc24"
+    },
+    {
+      "path": "faiss/evaluate_frozen.py",
+      "bytes": 9321,
+      "sha256": "6da556486baa7b601c8af868123dd5531a8e8bf8a49783975195edcefcd768ff",
+      "git_blob": "d752c6998ac05ff13700ab1c6fd23e7cd2e4c104"
+    },
+    {
+      "path": "faiss/evaluate_full_grid.py",
+      "bytes": 9294,
+      "sha256": "b17ae81534bacca5710f2a77ff9def6c69f86397d0a507eb0361e95c6146edf3",
+      "git_blob": "97befc230e64ff2d38ea119b0be4c1c9d6450a7d"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 147,
+      "sha256": "99a39ea95af6e951fb4863a7c12e610a3442f49949a1197974408f6ab58352a8",
+      "git_blob": "9de6ebccbc17558b080e01085f556a433b21d442"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6023,
+      "sha256": "cbf4f11849d8ed3f1bb74bb374e3df6a1b988e5a8ae0fec5db487471377cacdb",
+      "git_blob": "dcc3fc677772131505d07dd1f04515f1f8ff6521"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 87,
+      "sha256": "9385d21ddf3e6fa509c21deaa58e3656c1bd5ef59f33e9a09cf71c8bcc2e383e",
+      "git_blob": "73f4263d2a7f6e60d3ea2d6a4b3a4452c4a175ed"
+    },
+    {
+      "path": "seekdb/README.md",
+      "bytes": 1239,
+      "sha256": "61033e90b27b5d870ab49b47809e05655cfc072a85021d92b388a6e057b20513",
+      "git_blob": "e3190408ace2f7244b67eea8c73d76c41d5fdf78"
+    },
+    {
+      "path": "tests/test_selection.py",
+      "bytes": 8757,
+      "sha256": "70950e34d6e18086cfca257a0cb19e64c58ef7a677562172fb82a8abeaa71ab7",
+      "git_blob": "ed16775510cff6ad4130c206a40161bf47b44cae"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "contract_version": "1.0.0",
+  "experiment_name": "example_gpu_synthetic",
+  "track": "operational",
+  "quality_policy": {
+    "id": "seekdb_ivf_recall_v1",
+    "state": "CALIBRATION_REQUIRED",
+    "metric": "recall_at_10",
+    "target": null,
+    "reference": "set after quality evaluator validation"
+  },
+  "seed": 42,
+  "safety": {
+    "parallel_cases": 1,
+    "case_timeout_sec": 1800,
+    "min_free_memory_fraction": 0.7,
+    "max_case_fraction_of_free_memory": 0.5,
+    "max_existing_gpu_util_percent": 10,
+    "refuse_if_compute_process_exists": true,
+    "workspace_multiplier": 5.0
+  },
+  "cases": [
+    {
+      "id": "example_small_gaussian",
+      "enabled": true,
+      "source": "synthetic",
+      "n": 256,
+      "d": 16,
+      "k": 8,
+      "dtype": "fp32",
+      "algorithms": [
+        "faiss_gpu"
+      ],
+      "max_iter": 3
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript when using this artifact."
+title: "CPU/GPU K-Means Evaluation"
+type: software
+repository-code: "https://github.com/whu-totemdb/CPU-GPU-K-Means-Evaluation"
+authors:
+  - given-names: Yiting
+    family-names: Tang
+  - given-names: Yushuai
+    family-names: Ji
+  - given-names: Shixun
+    family-names: Huang
+  - given-names: Sheng
+    family-names: Wang
+  - given-names: Quanqing
+    family-names: Xu
+  - given-names: Chuanhui
+    family-names: Yang
+preferred-citation:
+  type: unpublished
+  title: "Modern CPU and GPU K-Means for IVF Indexing: Evaluation and Profile-Assisted Selection"
+  authors:
+    - given-names: Yiting
+      family-names: Tang
+    - given-names: Yushuai
+      family-names: Ji
+    - given-names: Shixun
+      family-names: Huang
+    - given-names: Sheng
+      family-names: Wang
+    - given-names: Quanqing
+      family-names: Xu
+    - given-names: Chuanhui
+      family-names: Yang
+  notes: "Manuscript. Publication details pending."
